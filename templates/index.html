@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sentinel | SMS & URL Threat Analyzer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/styles.css"></head>
+<body><div class="app-shell"><aside class="sidebar">
+<div class="brand"><div class="brand-mark">S</div><div><strong>SENTINEL</strong><span>THREAT INTELLIGENCE</span></div></div>
+<div class="side-label">WORKSPACE</div><a class="nav-item active" href="#overview"><span>◈</span> Overview</a><a class="nav-item" href="#sms-panel"><span>▤</span> SMS Scanner</a><a class="nav-item" href="#url-panel"><span>↗</span> URL Inspector</a>
+<div class="side-bottom"><div class="status-dot"></div><div><b>Detection engine</b><small>Local analysis active</small></div></div></aside>
+<main class="main-content" id="overview"><header class="topbar"><div class="breadcrumb">Workspace <span>/</span> Threat Analyzer</div><div class="top-status"><span class="pulse"></span> SYSTEM ONLINE</div></header>
+<section class="welcome"><div><div class="eyebrow">SECURITY OPERATIONS CENTER</div><h1>Message & URL <em>Analyzer</em></h1><p>Check suspicious messages and links before you interact with them.</p></div><div class="shield-art" aria-hidden="true"><div class="ring ring-one"></div><div class="ring ring-two"></div><div class="shield">✓</div></div></section>
+<section class="metrics"><div class="metric-card"><div class="metric-icon cyan">⌁</div><div class="metric-label">ANALYSIS ENGINE</div><div class="metric-value">ML + Rules</div><div class="metric-foot">Text model and URL heuristics</div></div>
+<div class="metric-card"><div class="metric-icon violet">◉</div><div class="metric-label">SMS CLASSIFIER</div><div class="metric-value">TF-IDF <span>+</span> LR</div><div class="metric-foot">Learns patterns from sample data</div></div>
+<div class="metric-card"><div class="metric-icon green">⌖</div><div class="metric-label">URL CHECK</div><div class="metric-value">Offline</div><div class="metric-foot">Does not open submitted links</div></div></section>
+<section class="scanner-grid"><article class="panel" id="sms-panel"><div class="panel-heading"><div class="panel-symbol cyan-bg">▤</div><div><h2>SMS Spam Scanner</h2><p>Classify message text with machine learning.</p></div><span class="tag">NLP MODEL</span></div>
+<label for="sms-input">MESSAGE CONTENT</label><textarea id="sms-input" maxlength="5000" placeholder="Paste a message here…&#10;&#10;Example: Congratulations! You have won a prize. Click the link to claim."></textarea>
+<div class="input-meta"><span>Do not include passwords or OTPs.</span><span id="sms-count">0 / 5000</span></div><button class="primary-button" id="sms-submit"><span>Analyze message</span><span>→</span></button><div class="result-box hidden" id="sms-result" aria-live="polite"></div></article>
+<article class="panel" id="url-panel"><div class="panel-heading"><div class="panel-symbol violet-bg">↗</div><div><h2>URL Inspector</h2><p>Review common warning signs in a link.</p></div><span class="tag purple-tag">RULE ENGINE</span></div>
+<label for="url-input">URL / WEB ADDRESS</label><div class="url-input-wrap"><span>⌁</span><input id="url-input" type="text" maxlength="2000" placeholder="https://example.com/login"></div>
+<div class="url-hint"><span class="lock">▣</span> The URL is inspected as text only; it will not be opened.</div><div class="example-row"><span>Try example:</span><button class="example-chip" data-url="https://www.example.com">Normal-looking</button><button class="example-chip" data-url="http://192.168.1.22/verify-account">Suspicious pattern</button></div>
+<button class="primary-button purple-button" id="url-submit"><span>Inspect URL</span><span>→</span></button><div class="result-box hidden" id="url-result" aria-live="polite"></div></article></section>
+<section class="bottom-note"><div class="note-icon">i</div><div><b>Understand the result</b><p>This is a student demonstration tool, not a live threat-intelligence service. A message or link marked low risk may still be dangerous. Verify unexpected requests using a trusted, independent channel.</p></div></section>
+<footer>SENTINEL <span>•</span> EDUCATIONAL CYBERSECURITY PROJECT <span class="footer-right">LOCAL DEMO · NO LIVE URL LOOKUPS</span></footer>
+</main></div><script src="/static/app.js"></script></body></html>
